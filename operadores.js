@@ -4,7 +4,6 @@ const operadores = [
     "HIGO TAMANINI",
     "HENRIQUE SIMÕES",
     "ITAMAR VALVASSORI",
-    "NATHAN BEN HUR",
     "ITAMAR FILHO",
     "LEONY BREDA",
     "RODRIGO PEREIRA",
@@ -102,29 +101,3 @@ const material = [
   
   const form = document.querySelector("form");
 const msg = document.getElementById("mensagem-sucesso");
-
-form.addEventListener("submit", function (e) {
-  e.preventDefault(); // Impede envio imediato para mostrar a mensagem
-
-  if (!form.checkValidity()) {
-    form.reportValidity();
-    return;
-  }
-
-  // Envia via FormSubmit
-  fetch(form.action, {
-    method: "POST",
-    body: new FormData(form)
-  }).then(() => {
-    msg.style.display = "block";   // mostra mensagem
-    form.reset();                  // limpa campos
-
-    // limpa selects dinâmicos, se necessário
-    const itensSelect = document.getElementById("itensSelect");
-    if (itensSelect) itensSelect.innerHTML = '<option value="">Selecione a área</option>';
-
-    setTimeout(() => msg.style.display = "none", 5000); // esconde depois de 5s
-  }).catch(() => {
-    alert("Erro ao enviar. Tente novamente.");
-  });
-});
