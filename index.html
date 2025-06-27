@@ -8,29 +8,31 @@
 </head>
 <body>
   <div class="container">
-    <h1>Registro de Perda de Chapas</h1>
+    <h1>Registro de Perda</h1>
     <form action="https://formsubmit.co/itamar.filho@guidoni.com.br" method="POST" enctype="multipart/form-data">
       <input type="hidden" name="_captcha" value="false" />
       <input type="hidden" name="_subject" value="Nova perda registrada" />
 
       <!-- 🔹 CABEÇALHO COM SOMBRA -->
         <div class="header">
-            <div class="field">
+            <div class="min_field_operador">
                 <label>OPERADOR:</label>
                 <select id="operadorSelect" name="operador" required></select>
             </div>
-            <div class="field">
-                <label>DATA:</label>
-                <input type="date" name="data" required />
-            </div>
-            <div class="field">
-                <label>TURNO:</label>
-                <select name="turno" required>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="N/A">N/A</option>
-                </select>
+            <div class="detalhe-chapa">
+                <div class="min_field_date">
+                    <label>DATA:</label>
+                    <input type="date" name="data" required />
+                </div>
+                <div class="min_field_turno">
+                    <label>TURNO:</label>
+                    <select name="turno" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="N/A">N/A</option>
+                    </select>
+                </div>
             </div>
         </div>
         <div class="detalhe-chapa">
