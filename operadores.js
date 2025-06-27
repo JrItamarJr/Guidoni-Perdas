@@ -98,6 +98,3 @@ const material = [
     option.textContent = setor;
     materialSelect.appendChild(option);
   });
-  
-  const form = document.querySelector("form");
-const msg = document.getElementById("mensagem-sucesso");
