@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registro de Perda</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Registro de Perda de Chapas</h1>
+    <form action="https://formsubmit.co/itamar.filho@guidoni.com.br" method="POST" enctype="multipart/form-data">
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_subject" value="Nova perda registrada" />
+
+      <!-- 🔹 CABEÇALHO COM SOMBRA -->
+        <div class="header">
+            <div class="field">
+                <label>OPERADOR:</label>
+                <select id="operadorSelect" name="operador" required></select>
+            </div>
+            <div class="field">
+                <label>DATA:</label>
+                <input type="date" name="data" required />
+            </div>
+            <div class="field">
+                <label>TURNO:</label>
+                <select name="turno" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="N/A">N/A</option>
+                </select>
+            </div>
+        </div>
+        <div class="detalhe-chapa">
+            <div class="field">
+                <label>ITEM:</label>
+                <select name="tipo" required>
+                    <option value=""></option>
+                    <option value="CHAPA BRUTA">CHAPA POLIDA</option>
+                    <option value="CHAPA BRUTA">CHAPA BRUTA</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>MATERIAL:</label>
+                <select id="materialSelect" name="material" required><option value=""></option></select>
+            </div>
+            <div class="field">
+                <label>LOCAL DA PERDA:</label>
+                <select id="categoria" name="tipo" onchange="atualizarOpcoes()" required>
+                    <option value=""></option>
+                    <option value="rb_saida">ROBÔ DE SAÍDA</option>
+                    <option value="rb_entrada">ROBÔ DE ENTRADA</option>
+                    <option value="rb_wip">WIP</option>
+                    <option value="rb_mov">MOVIMENTAÇÃO</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="detalhe-chapa">
+            <div class="header">
+                <div class="field">
+                    <label>ÁREA:</label>    
+                    <select id="itensSelect"></select>
+                </div>
+                <div class="op_field">
+                    <label for="op_prod">OP:</label>    
+                    <input type="text" name="op_prod" id="op_prod" pattern="\d{8}" maxlength="8" required/>
+                </div>
+                <div class="field">
+                    <label for="op_prod">LOTE:</label>    
+                    <input type="text" name="op_prod" id="op_prod" pattern="\d{8}" maxlength="8" required/>
+                </div>
+                <div class="op_field">
+                    <label for="op_prod">N° CHAPA</label>    
+                    <input type="text" name="op_prod" id="op_prod" pattern="\d{8}" maxlength="8" required/>
+                </div>
+            </div>
+        </div>
+      <!-- 🔻 RESTO DO FORMULÁRIO -->
+      <div class="field">
+        <label>Observações:</label>
+        <textarea name="observacoes" rows="4"></textarea>
+    </div>
+      <label>Foto:</label>
+      <input type="file" name="foto" accept="image/*" required />
+
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+  <script src="operadores.js"></script>
+</body>
+</html>
