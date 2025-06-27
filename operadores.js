@@ -4,6 +4,7 @@ const operadores = [
     "HIGO TAMANINI",
     "HENRIQUE SIMÕES",
     "ITAMAR VALVASSORI",
+    "NATHAN BEN HUR",
     "ITAMAR FILHO",
     "LEONY BREDA",
     "RODRIGO PEREIRA",
