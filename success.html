@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enviado com Sucesso</title>
+  <style>
+    body {
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .mensagem {
+      background: #d4edda;
+      color: #155724;
+      padding: 30px;
+      border: 1px solid #c3e6cb;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+      max-width: 90%;
+    }
+
+    .mensagem h1 {
+      margin: 0 0 10px;
+      font-size: 22px;
+    }
+
+    .mensagem p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="mensagem">
+    <h1>✅ Enviado com sucesso!</h1>
+    <p>Você será redirecionado em alguns segundos...</p>
+  </div>
+
+  <script>
+    setTimeout(function () {
+      window.location.href = "index.html"; // volte para sua página principal
+    }, 5000); // 5000 ms = 5 segundos
+  </script>
+</body>
+</html>
