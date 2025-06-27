@@ -54,10 +54,10 @@ const material = [
   ];
 
   const opcoes = {
-    rb_saida: ["LINHA 1","LINHA 2"],
-    rb_entrada: ["COMUM"],
-    rb_wip: ["POLIMENTO"],
-    rb_mov: ["POLIMENTO"],
+    'ROBÔ DE SAÍDA': ["LINHA 1","LINHA 2"],
+    'ROBÔ DE ENTRADA': ["COMUM"],
+    'WIP': ["POLIMENTO"],
+    'MOVIMENTAÇÃO': ["POLIMENTO"],
   };
   
   function atualizarOpcoes() {
