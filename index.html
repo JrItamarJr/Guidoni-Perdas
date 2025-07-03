@@ -92,5 +92,40 @@
     </form>
   </div>
   <script src="operadores.js"></script>
+  <script>
+    document.querySelector('input[type="file"]').addEventListener('change', function (event) {
+      const file = event.target.files[0];
+      if (!file || !file.type.startsWith('image/')) return;
+    
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const img = new Image();
+        img.onload = function () {
+          const canvas = document.createElement('canvas');
+          const maxWidth = 1024; // largura máxima
+          const scaleSize = maxWidth / img.width;
+          canvas.width = maxWidth;
+          canvas.height = img.height * scaleSize;
+    
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    
+          canvas.toBlob(function (blob) {
+            const compressedFile = new File([blob], file.name, {
+              type: 'image/jpeg',
+              lastModified: Date.now()
+            });
+    
+            // Substitui o arquivo original no input
+            const dataTransfer = new DataTransfer();
+            dataTransfer.items.add(compressedFile);
+            event.target.files = dataTransfer.files;
+          }, 'image/jpeg', 0.7); // qualidade de compressão (0.0 a 1.0)
+        };
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    });
+    </script>
 </body>
 </html>
