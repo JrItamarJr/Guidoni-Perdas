@@ -7,31 +7,32 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>Registro de Perda</h1>
-      <form action="https://formsubmit.co/itamar.filho@guidoni.com.br" method="POST" enctype="multipart/form-data">
-      <input type="hidden" name="_captcha" value="false"/>
-      <input type="hidden" name="_subject" value="Nova perda registrada"/>
-      <input type="hidden" name="_next" value="https://jritamarjr.github.io/Guidoni-Perdas/success.html"/>
-      <input type="hidden" name="_template" value="table"/>
+    <div class="container">
+        <div class="top-header">
+            <div class="title">Registro de Perda</div>
+            <img src="assets/logo-gui.png" alt="Logo" class="logo" />
+        </div>
+        <form action="https://formsubmit.co/itamar.filho@guidoni.com.br" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="_captcha" value="false"/>
+        <input type="hidden" name="_subject" value="Nova perda registrada"/>
+        <input type="hidden" name="_next" value="https://jritamarjr.github.io/Guidoni-Perdas/success.html"/>
+        <input type="hidden" name="_template" value="table"/>
         <div class="header">
             <div class="min_field_operador">
                 <label>OPERADOR:</label>
                 <select id="operadorSelect" name="OPERADOR" required></select>
             </div>
-            <div class="detalhe-chapa">
-                <div class="min_field_date">
-                    <label>DATA:</label>
-                    <input type="date" name="DATA OCORRIDO" required />
-                </div>
-                <div class="min_field_turno">
-                    <label>TURNO:</label>
-                    <select name="TURNO" required>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                    </select>
-                </div>
+            <div class="min_field_date">
+                <label>DATA:</label>
+                <input type="date" name="DATA OCORRIDO" required />
+            </div>
+            <div class="min_field_turno">
+                <label>TURNO:</label>
+                <select name="TURNO" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
             </div>
         </div>
         <div class="detalhe-chapa">
@@ -58,24 +59,28 @@
                 </select>
             </div>
         </div>
-        <div class="header">
-            <div class="field">
-                <label>ÁREA:</label>    
-                <select id="itensSelect" name="AREA" required></select>
-            </div>
-            <div class="op_field">
-                <label>OP:</label>    
-                <input type="text" name="OP" id="op_prod" pattern="\d{8}" maxlength="8" required/>
-            </div>
-            <div class="field">
-                <label>LOTE:</label>    
-                <input type="text" name="LOTE" id="lote_prod" maxlength="10" required/>
-            </div>
-            <div class="op_field">
-                <label>N° CHAPA</label>    
-                <input type="text" name="N° CHAPA" id="num_ch__prod" maxlength="3" required/>
+
+        <div class="detalhe-chapa">
+            <div class="header">
+                <div class="field">
+                    <label>ÁREA:</label>    
+                    <select id="itensSelect" name="AREA" required></select>
+                </div>
+                <div class="op_field">
+                    <label>OP:</label>    
+                    <input type="text" name="OP" id="op_prod" pattern="\d{8}" maxlength="8" required/>
+                </div>
+                <div class="field">
+                    <label>LOTE:</label>    
+                    <input type="text" name="LOTE" id="lote_prod" maxlength="10" required/>
+                </div>
+                <div class="op_field">
+                    <label>N° CHAPA</label>    
+                    <input type="text" name="N° CHAPA" id="num_ch__prod" maxlength="3" required/>
+                </div>
             </div>
         </div>
+      <!-- 🔻 RESTO DO FORMULÁRIO -->
         <div class="field">
             <label>DESCREVA O OCORRIDO:</label>
             <textarea name="OBSERVAÇÕES" rows="4" required></textarea>
